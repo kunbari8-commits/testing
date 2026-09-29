@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>행정안전부 보도자료 | 공무원 인사교류 활성화 및 채용제도 개선</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f2f5f9;
+    --surface: #ffffff;
+    --ink: #142033;
+    --ink-soft: #4a586d;
+    --line: #d8dfe9;
+    --navy: #16305c;
+    --blue: #2454a6;
+    --blue-tint: #e6eefb;
+    --amber: #e8a317;
+    --amber-tint: #fdf3dc;
+    --radius: 6px;
+    --sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --serif: "Noto Serif KR", "Batang", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0e1626;
+      --surface: #16223a;
+      --ink: #e8edf6;
+      --ink-soft: #a5b2c8;
+      --line: #2a3a58;
+      --navy: #0a1220;
+      --blue: #8fb4f5;
+      --blue-tint: #1c2f57;
+      --amber: #f0b43a;
+      --amber-tint: #2b2414;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.75;
+    font-size: 17px;
+    word-break: keep-all;
+  }
+  .progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0;
+    background: var(--amber); z-index: 50;
+  }
+
+  /* 페이지 제목 바 */
+  .site-bar {
+    background: var(--navy);
+    color: #fff;
+    padding: 14px 24px;
+  }
+  .site-bar-inner {
+    max-width: 920px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .site-title { font-size: 1rem; font-weight: 600; letter-spacing: .01em; margin: 0; }
+  .site-bar small { color: #b9c7e2; font-size: .85rem; }
+
+  main { max-width: 920px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* 보도자료 제목 */
+  .hero { padding: 64px 0 40px; }
+  .hero .meta { color: var(--ink-soft); font-size: .92rem; margin: 0 0 18px; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 4.6vw, 3rem);
+    line-height: 1.32;
+    color: var(--navy);
+    margin: 0 0 22px;
+    max-width: 18em;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .hero h1 { color: #f1f5fc; }
+  }
+  .hero .lead { color: var(--ink-soft); max-width: 40em; margin: 0; }
+
+  /* 주요 내용 목록 */
+  .highlights {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+  .highlights h2 { font-size: 1.1rem; margin: 0 0 14px; color: var(--blue); }
+  .highlights ul { list-style: none; padding: 0; margin: 0; }
+  .highlights li {
+    padding: 12px 0 12px 28px;
+    position: relative;
+    border-top: 1px solid var(--line);
+    font-weight: 500;
+  }
+  .highlights li:first-child { border-top: 0; }
+  .highlights li::before {
+    content: ""; position: absolute; left: 4px; top: 1.15em;
+    width: 10px; height: 10px; background: var(--amber); transform: rotate(45deg);
+  }
+
+  /* 섹션 */
+  .section { margin-bottom: 64px; }
+  .section-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 12px; margin-bottom: 8px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .section-head { border-color: var(--blue); }
+  }
+  .section-head h2 { font-family: var(--serif); font-size: 1.6rem; margin: 0; color: var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .section-head h2 { color: #f1f5fc; }
+  }
+  .section-intro { color: var(--ink-soft); margin: 14px 0 20px; }
+  .toggle-all {
+    font: inherit; font-size: .88rem; cursor: pointer;
+    background: transparent; color: var(--blue);
+    border: 1px solid var(--blue); border-radius: 999px;
+    padding: 4px 14px;
+  }
+  .toggle-all:hover { background: var(--blue-tint); }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+  }
+  details[open] { border-color: var(--blue); }
+  summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 16px 20px; font-weight: 600;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: ""; flex: none; width: 9px; height: 9px;
+    border-right: 2px solid var(--blue); border-bottom: 2px solid var(--blue);
+    transform: rotate(45deg); transition: transform .2s;
+  }
+  details[open] summary::after { transform: rotate(-135deg); }
+  .item-body { padding: 0 20px 18px; color: var(--ink-soft); margin: 0; }
+  .item-body strong { color: var(--ink); font-weight: 600; }
+
+  /* 장관 인용구 */
+  .quote {
+    background: var(--navy);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 44px clamp(24px, 6vw, 56px);
+    margin: 0 0 56px;
+    position: relative;
+  }
+  .quote::before {
+    content: "\201C";
+    font-family: var(--serif);
+    font-size: 6rem; line-height: 1;
+    color: var(--amber);
+    position: absolute; top: 14px; left: clamp(20px, 5vw, 44px);
+  }
+  .quote blockquote {
+    margin: 26px 0 0; padding: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.75;
+  }
+  .quote figcaption { margin-top: 22px; color: #c3d0ea; font-size: .95rem; }
+  .quote figcaption b { color: var(--amber); font-weight: 600; }
+
+  /* 시행 일정 & 담당자 */
+  .schedule {
+    background: var(--amber-tint);
+    border-radius: var(--radius);
+    padding: 22px 28px;
+    font-size: .95rem;
+  }
+  .schedule p { margin: 0 0 6px; }
+  .schedule p:last-child { margin: 0; color: var(--ink-soft); }
+
+  footer { text-align: center; color: var(--ink-soft); font-size: .85rem; padding: 0 24px 40px; }
+
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--amber); outline-offset: 2px;
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .highlights { padding: 22px 20px; }
+    .hero { padding-top: 40px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    summary::after { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="site-bar">
+  <div class="site-bar-inner">
+    <h1 class="site-title" style="font-size:1rem">행정안전부 보도자료 알림판</h1>
+    <small>지방인사제도과</small>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="meta">행정안전부 · 입법예고 2026. 5. 11.(월) ~ 6. 10.</p>
+    <h1>공무원 인사교류 활성화 및 채용제도 개선 입법예고</h1>
+    <p class="lead">행정안전부가 「지방공무원 임용령」·「지방공무원 평정규칙」 개정안을 입법예고했습니다. 교류 참여자에게 승진과 평가 혜택을 주고, 채용시험의 부담을 줄이는 내용입니다.</p>
+  </section>
+
+  <aside class="highlights" aria-labelledby="hl">
+    <h2 id="hl">주요 내용</h2>
+    <ul>
+      <li>핵심 인사교류 직위·민간기업 전담공무원 대상 승진 소요 연수 최대 1년 단축</li>
+      <li>1년 이상 우수 근무자 특별승진 부여, 근무성적 '우' 이상·성과급 'A' 이상 의무 보장</li>
+      <li>2027년부터 8급 공채 한국사를 '한국사능력검정시험(3급 이상)'으로 대체</li>
+    </ul>
+  </aside>
+
+  <section class="section" aria-labelledby="s1">
+    <div class="section-head">
+      <h2 id="s1">파격적인 승진·평가 인센티브</h2>
+      <button class="toggle-all" type="button" data-target="s1-list">모두 펼치기</button>
+    </div>
+    <p class="section-intro">이번 개정안의 핵심은 교류 공무원에 대한 확실한 보상 체계 마련입니다.</p>
+    <div id="s1-list">
+      <details open>
+        <summary>승진 소요 연수 단축</summary>
+        <p class="item-body">핵심 인사교류 직위 또는 민간기업 전담공무원으로 근무하면, <strong>해당 직위 교류 기간의 절반을 최대 1년 범위</strong>에서 승진 소요 연수에서 감면합니다.</p>
+      </details>
+      <details>
+        <summary>특별승진 기회 부여</summary>
+        <p class="item-body">해당 직위에서 <strong>1년 이상 근무</strong>하며 우수한 성과를 낸 공무원에게 특별승진의 기회를 부여합니다.</p>
+      </details>
+      <details>
+        <summary>대우공무원 혜택 확대</summary>
+        <p class="item-body">기존에 인사교류자에게만 적용되던 '대우공무원 산정 시 교류 기간 경력 100% 단축' 혜택을 <strong>민간기업 전담공무원</strong>에게도 동일하게 확대 적용합니다.</p>
+      </details>
+      <details>
+        <summary>평가·성과급 보장</summary>
+        <p class="item-body">인사교류자는 일반 공무원과 평정 단위를 분리해 근무성적평정 <strong>최소 '우'</strong>, 성과급 <strong>최소 'A'</strong> 등급을 의무 보장받습니다. 최상위 등급 우수 성과자에게는 특별성과가산금을 지급할 수 있는 근거도 마련합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="s2">
+    <div class="section-head">
+      <h2 id="s2">수험생 부담 완화 및 우수 인재 채용 확대</h2>
+      <button class="toggle-all" type="button" data-target="s2-list">모두 펼치기</button>
+    </div>
+    <p class="section-intro">지방공무원 공채 및 경력경쟁 채용 제도도 시대 흐름에 맞게 개선됩니다.</p>
+    <div id="s2-list">
+      <details open>
+        <summary>8급 한국사 과목 대체</summary>
+        <p class="item-body">수험생의 부담을 덜고 채용시험 간 호환성을 높이기 위해 <strong>2027년부터</strong> 8급 공채 한국사 과목을 9급과 동일하게 '한국사능력검정시험(3급 이상)'으로 대체합니다.</p>
+      </details>
+      <details>
+        <summary>경력 단축 및 직급 확대</summary>
+        <p class="item-body">최신 경력 반영이 중요한 특정 분야 경채시험은 필요 경력을 <strong>1년 범위 내</strong>에서 단축할 수 있는 근거를 마련합니다. 현행 8급 이하로 운영하던 우수 인재 추천채용제 대상 직급은 <strong>7급까지</strong> 확대합니다.</p>
+      </details>
+      <details>
+        <summary>취약 청년 공직 진출 지원</summary>
+        <p class="item-body">9급 공채 저소득층 구분모집 대상에 <strong>'자립준비청년'과 '보호기간 연장청년'</strong>을 새로 추가합니다. 기초생활수급자·한부모가족 지원 대상자에게 요구되던 2년 이상의 자격 유지 기간은 <strong>1년으로 완화</strong>합니다.</p>
+      </details>
+    </div>
+  </section>
+
+  <figure class="quote">
+    <blockquote>
+      이번 조치는 프로젝트 기반 인사교류를 통해 대규모 국책사업 등에 참여하는 공무원에게 파격적인 인센티브를 부여해 보다 성공적인 사업 추진을 돕기 위한 것입니다. 앞으로도 공직사회의 개방성을 확대하고 활력을 제고할 수 있도록 지방인사제도를 적극적으로 개선해 나가겠습니다.
+    </blockquote>
+    <figcaption><b>윤호중</b> 행정안전부 장관</figcaption>
+  </figure>
+
+  <div class="schedule">
+    <p><strong>시행 일정</strong> 입법예고 후 규제심사·법제처 심사를 거쳐 2026년 하반기 중 공포·시행될 예정입니다.</p>
+    <p>의견 제출: 행정안전부 누리집 또는 대한민국 전자관보 · 담당: 지방인사제도과 김정민(044-205-3347)</p>
+  </div>
+</main>
+
+<footer>본 페이지는 행정안전부 보도자료를 바탕으로 재구성한 요약본입니다.</footer>
+
+<script>
+  // 읽기 진행 표시줄
+  const bar = document.getElementById('progress');
+  function updateProgress() {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  // 섹션별 모두 펼치기 / 접기
+  document.querySelectorAll('.toggle-all').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const items = document.querySelectorAll('#' + btn.dataset.target + ' details');
+      const open = btn.textContent.trim() === '모두 펼치기';
+      items.forEach(d => d.open = open);
+      btn.textContent = open ? '모두 접기' : '모두 펼치기';
+    });
+  });
+</script>
+</body>
+</html>
